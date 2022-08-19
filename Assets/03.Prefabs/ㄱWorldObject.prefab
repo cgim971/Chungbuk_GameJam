@@ -347,7 +347,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9057727636369582582}
   - component: {fileID: 9057727636369582577}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Square (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -432,7 +432,7 @@ GameObject:
   - component: {fileID: 9057727637457818919}
   - component: {fileID: 9057727637457818916}
   - component: {fileID: 1421147432}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: "\u3131WorldObject"
   m_TagString: Untagged
   m_Icon: {fileID: 0}

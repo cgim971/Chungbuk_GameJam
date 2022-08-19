@@ -29,7 +29,6 @@ public class WordController : MonoBehaviour, IPointerEnterHandler, IDropHandler,
     /// </summary>
     public void OnPointerEnter(PointerEventData eventData)
     {
-        Debug.Log("PinterEnter");
         img.color = new Color(color.r, color.g, color.b, 0.6f);
     }
 
@@ -38,7 +37,6 @@ public class WordController : MonoBehaviour, IPointerEnterHandler, IDropHandler,
 	/// </summary>
     public void OnPointerExit(PointerEventData eventData)
     {
-        Debug.Log("PinterExit");
         img.color = new Color(color.r, color.g, color.b, 1);
     }
 

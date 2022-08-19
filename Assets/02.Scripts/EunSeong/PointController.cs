@@ -30,7 +30,7 @@ public class PointController : MonoBehaviour
             obj.pivot[pivotNumber].transform.parent = null;
             obj.transform.parent = obj.pivot[pivotNumber].transform;
             obj.pivot[pivotNumber].transform.position = c.transform.position;
-            parentObject.SetActive(false);
+            //parentObject.SetActive(false);
         }
             
     }
