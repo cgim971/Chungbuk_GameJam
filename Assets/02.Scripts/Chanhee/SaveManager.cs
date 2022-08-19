@@ -5,6 +5,7 @@ using Newtonsoft.Json;
 
 public class SaveManager : MonoBehaviour
 {
+
     private void Start()
     {
         GameManager.Instance.userSave.LoadData();

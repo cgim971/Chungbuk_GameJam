@@ -11,7 +11,19 @@ public class ChangeVolume : MonoBehaviour
     [SerializeField] Image image;
     [SerializeField] Sprite[] sprite = new Sprite[2];
     [SerializeField] TMP_Text text;
+    public bool isBGM = false;
 
+    private void Start() {
+        OpenVolume();
+    }
+
+
+    public void OpenVolume() {
+        if (isBGM) slider.value = MusicVolumes.bgmVolume;
+        else slider.value = MusicVolumes.seVolume;
+        text.text = (int)(slider.value * 100) + "";
+        audiosource.volume = slider.value;
+    }
 
     public void SetVolume() {
         audiosource.volume = slider.value;
@@ -22,6 +34,11 @@ public class ChangeVolume : MonoBehaviour
         }
 
 
+    }
+
+    public void SaveVolume() {
+        if(isBGM) MusicVolumes.bgmVolume = audiosource.volume;
+        else MusicVolumes.seVolume = audiosource.volume;
     }
 
 }

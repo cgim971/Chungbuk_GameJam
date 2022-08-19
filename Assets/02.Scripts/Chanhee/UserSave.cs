@@ -46,6 +46,7 @@ public class UserSave : MonoBehaviour
         }
     }
 
+    [SerializeField] 
 
     public void LoadData()
     {
