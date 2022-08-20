@@ -129,3 +129,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6761f7eecbbe65047a6d8acd44cd7b70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  wordControllerList: []
+  _xyPos:
+  - x: -1.5
+    y: 3.2
+  - x: -1.5
+    y: 2.7
+  - x: -1
+    y: 2.7
+  - x: -1
+    y: 2.5
+  - x: -1.5
+    y: 2.5
+  - x: -1.5
+    y: 2.2
+  - x: -1
+    y: 2.2
+  - x: -1
+    y: 1.7
+  - x: -1
+    y: 1.2
+  - x: -0.5
+    y: 1.2
+  - x: -0.5
+    y: 0.7
