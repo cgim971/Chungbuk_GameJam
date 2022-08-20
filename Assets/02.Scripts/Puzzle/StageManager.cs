@@ -8,6 +8,8 @@ public class StageManager : MonoBehaviour
     [SerializeField] private Transform _parent;
     [SerializeField] private GameObject _point;
 
+    [SerializeField] private GameObject _kingObj;
+
     private void Start()
     {
         SetStage(0);
@@ -27,6 +29,9 @@ public class StageManager : MonoBehaviour
         }
 
         CreatePoint(stageInfo._endPointInfo.pos, PointInfo.PointType.EndPoint);
+
+        GameObject king = Instantiate(_kingObj, null);
+        king.transform.position = stageInfo._startPointInfo.pos;
     }
 
     public void CreatePoint(Vector2 pos, PointInfo.PointType pointType)

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TouchController : MonoBehaviour
 {
@@ -9,10 +10,18 @@ public class TouchController : MonoBehaviour
     [SerializeField] private LayerMask _mapLayer;
     [SerializeField] private LayerMask _wordMapLayer;
 
+    [SerializeField] private Button _returnBtn;
+
     Collider2D _obj;
     private Vector2 _currentObjPos;
 
     Coroutine touchCoroutine;
+    WordController word;
+
+    private void Start()
+    {
+        _returnBtn.onClick.AddListener(() => Return());
+    }
 
     private void Update()
     {
@@ -30,7 +39,6 @@ public class TouchController : MonoBehaviour
             }
         }
     }
-
 
     IEnumerator Touching()
     {
@@ -50,6 +58,14 @@ public class TouchController : MonoBehaviour
         {
             yield break;
         }
+
+        WordController word = _obj.GetComponent<WordController>();
+
+        if (word.IsBatch == true)
+        {
+            yield break;
+        }
+
 
         _currentObjPos = _obj.transform.position;
 
@@ -72,6 +88,8 @@ public class TouchController : MonoBehaviour
 
         // 마우스 위치 변경 필요
         Collider2D map = Physics2D.OverlapCircle(mousePos, _radius, _wordMapLayer);
+        word = _obj.GetComponent<WordController>();
+
         if (map != null)
         {
             _obj = null;
@@ -83,11 +101,24 @@ public class TouchController : MonoBehaviour
         {
             _obj.transform.position = _currentObjPos;
         }
-        _obj.GetComponent<WordController>().FindCircle();
+        word.FindCircle();
         _obj = null;
+        word.IsBatch = true;
+
+        word.CurrentPos = _currentObjPos;
 
         return;
     }
 
+    public void Return()
+    {
+        KingMovement.instance.DeleteWord(out GameObject obj);
 
+        if (obj == null) return;
+
+        WordController word = obj.GetComponent<WordController>();
+
+        obj.transform.position = word.CurrentPos;
+        word.IsBatch = false;
+    }
 }

@@ -47,3 +47,6 @@ TagManager:
   - name: Map
     uniqueID: 2204996361
     locked: 0
+  - name: King
+    uniqueID: 2842050869
+    locked: 0
