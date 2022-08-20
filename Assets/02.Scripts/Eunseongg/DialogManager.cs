@@ -23,7 +23,7 @@ public class DialogManager : MonoBehaviour, IPointerDownHandler
 
     public float typingSpeed  = 0.1f;
     bool isTyping;
-
+    public bool isTutorial;
     private void Awake()
     {
         if (instance == null)
@@ -54,11 +54,13 @@ public class DialogManager : MonoBehaviour, IPointerDownHandler
             isTyping = true;
             nextText.SetActive(false);
             StartCoroutine(Typing(currnetSentence));
+            isTutorial = true;
         }
         else
         {
             dialogueGroup.alpha = 0;
             dialogueGroup.blocksRaycasts = false;
+            isTutorial = false;
         }
     }
 

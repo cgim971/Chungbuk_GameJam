@@ -38,6 +38,13 @@ public class ClockTimer : MonoBehaviour
 
         while (time > 0)
         {
+            yield return null;
+            if (DialogManager.Instance.isTutorial)
+            {
+                yield return null;
+                continue;
+
+            }
             time--;
             if (time <= 0)
             {
