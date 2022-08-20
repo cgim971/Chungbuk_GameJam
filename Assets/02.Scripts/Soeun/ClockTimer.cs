@@ -8,49 +8,52 @@ public class ClockTimer : MonoBehaviour
 {
     [SerializeField] TMP_Text timeTxt;
     [SerializeField] Image clockImg;
-    public float maxtime=30;
+    public float maxtime = 30;
     [SerializeField] Image warn;
     Coroutine timerCoroutine;
 
 
-    void Start() {
+    void Start()
+    {
         timerCoroutine = StartCoroutine(Timer());
-
-        
     }
 
-    public void StopTimer() {
-        if (timerCoroutine != null) {
+    public void StopTimer()
+    {
+        if (timerCoroutine != null)
+        {
             StopCoroutine(timerCoroutine);
             clockImg.fillAmount = 0;
             timeTxt.text = "";
             warn.enabled = false;
-
+            TouchController.instance.IsEnd = true;
+            KingMovement.instance.FindRoad();
         }
-
-
     }
 
-    IEnumerator Timer() {
+    IEnumerator Timer()
+    {
         WaitForSeconds wait = new WaitForSeconds(1);
         float time = maxtime;
 
-        while (time >0) {
+        while (time > 0)
+        {
             time--;
-            if (time <= 0) {
-                GameObject.FindGameObjectWithTag("GameOver").GetComponent<Canvas>().enabled = true;
+            if (time <= 0)
+            {
+                StopTimer();
+                yield break;
             }
             clockImg.fillAmount = time / maxtime;
-            timeTxt.text = time+"";
+            timeTxt.text = time + "";
 
-            if (time <= 10) {
-                warn.enabled = time % 2 == 0 ? false : true;
+            if (time <= 10)
+            {
+                warn.enabled = !(time % 2 == 0);
             }
 
             yield return wait;
         }
-        
     }
-
 
 }
