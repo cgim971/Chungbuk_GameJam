@@ -74,8 +74,9 @@ public class WordController : MonoBehaviour, IPointerEnterHandler, IDropHandler,
 
         if (success)
         {
-            GameObject obj = Instantiate(points[0].temp, Camera.main.ScreenToWorldPoint(rect.position), Quaternion.identity);
-            obj.transform.position = Camera.main.ScreenToWorldPoint(rect.position);
+            Vector2 worldPos = Camera.main.ScreenToWorldPoint(rect.position);
+            GameObject obj = Instantiate(points[0].temp, worldPos, Quaternion.identity);
+            obj.transform.position = worldPos;
             gameObject.SetActive(false);
         }
         else
