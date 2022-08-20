@@ -989,10 +989,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _stageInfo:
     _startPointInfo:
-      pos: {x: 0, y: 0}
+      pos: {x: -2, y: 3.2}
     _stagePointList: []
     _endPointInfo:
-      pos: {x: 0, y: 0}
+      pos: {x: -0.5, y: 0.7}
   _parent: {fileID: 1785980907}
   _point: {fileID: 3837644633885357455, guid: 3f84a731b781c8043a81549b6e598bf9, type: 3}
   _kingObj: {fileID: 2697942599446729623, guid: 4a9879946a9f528409fbf611c74f28a3, type: 3}
@@ -1556,7 +1556,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u3147\u3141\u3134\u3139"
+  m_Text: "\uB85C\uBE44\uB85C"
 --- !u!222 &1183303531
 CanvasRenderer:
   m_ObjectHideFlags: 0

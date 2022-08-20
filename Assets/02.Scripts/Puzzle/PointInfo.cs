@@ -20,4 +20,17 @@ public class PointInfo : MonoBehaviour
     }
 
 
+    private void FixedUpdate()
+    {
+        if (_pointType == PointType.EndPoint)
+        {
+            Collider2D col = Physics2D.OverlapCircle(transform.position, 1f, LayerMask.GetMask("word"));
+            if(col != null)
+            {
+                StageController.instance.Clear(0);
+            }
+        }
+    }
+        
+
 }

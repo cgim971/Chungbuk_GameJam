@@ -87,9 +87,14 @@ public class KingMovement : MonoBehaviour
                 yield return null;
             }
 
-            StageController.instance.Clear(0);
 
         }
+
+        yield return new WaitForSeconds(1);
+
+        StageController.instance.Fail();
+        
+
     }
 }
 

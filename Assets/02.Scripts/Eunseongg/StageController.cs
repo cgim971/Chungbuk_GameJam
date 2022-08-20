@@ -20,6 +20,7 @@ public class StageController : MonoBehaviour
         }
     }
     public GameObject clearPanel;
+    public GameObject failPanel;
     public void Clear(int num)
     {
         try
@@ -36,5 +37,9 @@ public class StageController : MonoBehaviour
 
     }
 
+    public void Fail()
+    {
+        failPanel.SetActive(true);
+    }
 
 }

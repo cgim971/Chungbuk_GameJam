@@ -540,17 +540,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2dd9f0b0703a21640a3579b14b19a8d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _stageInfos:
-  - _startPointInfo:
-      number: 0
+  _stageInfo:
+    _startPointInfo:
       pos: {x: -2, y: 3.2}
     _stagePointList: []
     _endPointInfo:
-      number: 0
       pos: {x: -0.5, y: 0.7}
   _parent: {fileID: 1785980907}
   _point: {fileID: 3837644633885357455, guid: 3f84a731b781c8043a81549b6e598bf9, type: 3}
   _kingObj: {fileID: 2697942599446729623, guid: 4a9879946a9f528409fbf611c74f28a3, type: 3}
+  number: 0
 --- !u!4 &587349075
 Transform:
   m_ObjectHideFlags: 0
