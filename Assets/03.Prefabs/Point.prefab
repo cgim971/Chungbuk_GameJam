@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3837644633885357453}
   - component: {fileID: 3837644633885133426}
   - component: {fileID: 3837644633885133427}
+  - component: {fileID: 631629569842327204}
   m_Layer: 8
   m_Name: Point
   m_TagString: Circle
@@ -115,4 +116,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pointType: 0
-  _stageNumber: 0
+--- !u!114 &631629569842327204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3837644633885357455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09fbdb7d37a2e224ea0e70f7864a27f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  connectedAncher: {fileID: 0}

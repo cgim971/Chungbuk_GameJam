@@ -46,6 +46,10 @@ public class WordController : MonoBehaviour
 
                         transform.position = pos;
 
+                        // 퍼즐 포인트에 블록을 넣는다.
+                        col2.GetComponent<Puzzle_Point>().SetBlock(this.GetComponent<Block>());
+
+
                         KingMovement.instance.AddWord(this);
 
                         return;

@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1450691880730227040}
   - component: {fileID: 532215574313209867}
-  - component: {fileID: 7303536729151169455}
-  m_Layer: 0
+  - component: {fileID: -5873021797035912786}
+  m_Layer: 6
   m_Name: "\u3155"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71,8 +71,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -2089970935
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: ccb1cf1c003ed6a44ae0e6a0e557a6e1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -85,7 +85,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7303536729151169455
+--- !u!114 &-5873021797035912786
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -101,6 +101,6 @@ MonoBehaviour:
   _circleCollider: []
   _circleMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   _currentPos: {x: 0, y: 0}
   _isBatch: 0

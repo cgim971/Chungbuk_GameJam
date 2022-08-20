@@ -47,13 +47,31 @@ public class KingMovement : MonoBehaviour
         //    index = 0;
         //}
 
-
-        // 되면 움직임
-        // 안 되면 안 움직임
-
-
+        StartCoroutine(Stage1());
     }
 
+    public List<xyPos> _xyPos;
+    IEnumerator Stage1()
+    {
+        for (int i = 0; i < _xyPos.Count; i++)
+        {
+            Vector2 target = new Vector2(_xyPos[i].x, _xyPos[i].y);
 
+            float dist = Vector2.Distance(target, transform.position);
 
+            while (dist > 0.05f)
+            {
+                transform.position = Vector2.MoveTowards(transform.position, target, 2f * Time.deltaTime);
+                dist = Vector2.Distance(target, transform.position);
+                yield return null;
+            }
+        }
+    }
+}
+
+[System.Serializable]
+public class xyPos
+{
+    public float x;
+    public float y;
 }
