@@ -40,6 +40,7 @@ public class SoundManager : MonoBehaviour
     {
         GameObject go = new GameObject($"{sfxName} Sound");
         AudioSource audioSource = go.AddComponent<AudioSource>();
+        audioSource.volume = MusicVolumes.seVolume;
         audioSource.clip = clip;
         audioSource.Play();
 
@@ -53,7 +54,7 @@ public class SoundManager : MonoBehaviour
         bgSound.loop = true;
 
         //사운드 조절
-        //bgSound.volume =0.1f;
+        bgSound.volume = MusicVolumes.bgmVolume;
         bgSound.Play();
     }
 }
