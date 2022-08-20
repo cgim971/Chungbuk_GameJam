@@ -19,6 +19,12 @@ public class DataManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        DontDestroyOnLoad(gameObject);
+    }
+
+    private void Start() {
+        Load();
     }
     public void Save()
     {

@@ -6,7 +6,6 @@ public class TempSave : MonoBehaviour
 {
     void Start()
     {
-        }
     }
 
 }
