@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Block : MonoBehaviour
 {
+    // 연결 된 블록
     public List<Block> connectedBlock = new List<Block>();
+    // 블록에 달려 있는 포인트들(circle collider)
     public List<Puzzle_Point> blockPoint = new List<Puzzle_Point>();
 
 
