@@ -13,7 +13,7 @@ public class GatchaController : MonoBehaviour
     private void Awake()
     {
         if (_btnUseShop == null)
-            _btnUseShop = transform.Find("ShopButton").GetComponent<Button>();
+            _btnUseShop = GameObject.FindGameObjectWithTag("ShopButton").GetComponent<Button>(); //transform.Find("ShopButton").GetComponent<Button>();
     }
 
     private void Start()

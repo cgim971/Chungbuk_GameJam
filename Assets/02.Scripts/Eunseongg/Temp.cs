@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Temp : MonoBehaviour
 {
+    [TextArea]
     public string[] sentences;
     void Start()
     {
@@ -11,9 +12,5 @@ public class Temp : MonoBehaviour
         DialogManager.Instance.Ondialogue(sentences);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 }

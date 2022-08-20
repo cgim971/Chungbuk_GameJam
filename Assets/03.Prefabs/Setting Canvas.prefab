@@ -312,7 +312,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 16242b7bdaf107a4b87aca409ecb246f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -945,14 +945,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 93ebb54f25b164d4ca30c158fc6c506b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1161,9 +1161,10 @@ MonoBehaviour:
   slider: {fileID: 2554645067478766675}
   image: {fileID: 2554645066460561794}
   sprite:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 21300000, guid: 16242b7bdaf107a4b87aca409ecb246f, type: 3}
+  - {fileID: 21300000, guid: e96a5b2bf0981b046a460b1dc75b77b7, type: 3}
   text: {fileID: 2554645066552415988}
+  isBGM: 0
 --- !u!1 &2554645067485509130
 GameObject:
   m_ObjectHideFlags: 0
@@ -1517,9 +1518,10 @@ MonoBehaviour:
   slider: {fileID: 2554645067559092433}
   image: {fileID: 2554645067270204188}
   sprite:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 21300000, guid: 93ebb54f25b164d4ca30c158fc6c506b, type: 3}
+  - {fileID: 21300000, guid: a745f3939056ef244841588f0cf49311, type: 3}
   text: {fileID: 2554645067950645715}
+  isBGM: 0
 --- !u!1 &2554645067826407200
 GameObject:
   m_ObjectHideFlags: 0

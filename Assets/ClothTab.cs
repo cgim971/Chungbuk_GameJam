@@ -13,13 +13,18 @@ public class Cloth {
 
 public class ClothTab : MonoBehaviour
 {
+    
+    public Image locker;
     public Image img;
     public Text txt;
     public Cloth[] clothes;
     public Button btn;
+    public GameObject obj;
     int page = 0;
 
-
+    private void Start() {
+        PrepareCloth();
+    }
     public void Right() {
         page++;
         if (page >= clothes.Length) page = 0;
@@ -36,5 +41,12 @@ public class ClothTab : MonoBehaviour
     void PrepareCloth() {
         img.sprite = clothes[page].sprite;
         txt.text = clothes[page].names;
+        locker.enabled = !UserSave.haveSkin[page];
+        btn.interactable= !UserSave.haveSkin[page];
+    }
+
+    public void UseSkin() {
+        UserSave.currentSkin = page;
+        obj.SetActive(true);
     }
 }

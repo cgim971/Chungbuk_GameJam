@@ -7,9 +7,19 @@ public class UserSave : MonoBehaviour
 
     SaveManager saveManager = null;
 
+    //클리어한 스테이지. 1스테이지(튜토리얼)는0번임
+    public static int OpenedStage = 0;
+    
+    //기본 홍룡포 제외 다른 스킨들 소유 여부. 0=빨강 1=노랑 2=파랑 3=군복 4=장복
+    public static bool[] haveSkin=new bool[5] { true, false, false, false, false};
 
+    //현재 적용중인 스킨 번호  0=빨강 1=노랑 2=파랑 3=군복 4=장복
+    public static int currentSkin = 0; 
 
     [SerializeField] private int _money = 0;
+
+
+
     private int _initialMoney = 0;
     private readonly string _playerPrefsMoneyKey = "PlayerPrefsMoneyKey";
     public int Money

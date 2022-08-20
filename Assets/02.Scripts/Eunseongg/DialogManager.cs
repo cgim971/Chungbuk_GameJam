@@ -11,9 +11,12 @@ public class DialogManager : MonoBehaviour, IPointerDownHandler
     private static DialogManager instance;
     public static DialogManager Instance { get { return instance; } }
 
-    public TMP_Text dialogueText;
+    public GameObject obj;
+
+    public Text dialogueText;
     public GameObject nextText;
     public CanvasGroup dialogueGroup;
+
     public Queue<string> sentences = new Queue<string>();
 
     public string currnetSentence;
@@ -27,10 +30,7 @@ public class DialogManager : MonoBehaviour, IPointerDownHandler
             instance = this;
         else
             Destroy(gameObject);
-    }
-    void Start()
-    {
-    }   
+    } 
 
     public void Ondialogue(string[] lines)
     {
