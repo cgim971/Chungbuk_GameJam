@@ -21,9 +21,16 @@ public class StageController : MonoBehaviour
     public GameObject clearPanel;
     public void Clear(int num)
     {
+        try
+        {
         DataManager.Instance.data.stageClear[num] = true;
         DataManager.Instance.Save();
         clearPanel.SetActive(true);
+        }
+        catch
+        {
+
+        }
     }
 
 }

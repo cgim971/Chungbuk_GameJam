@@ -507,7 +507,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _radius: 0.05
-  _circleCollider: []
+  _circleCollider:
+  - {fileID: 1495636128}
+  - {fileID: 1143074391}
+  - {fileID: 485949572}
+  - {fileID: 881545037}
   _circleMask:
     serializedVersion: 2
     m_Bits: 256

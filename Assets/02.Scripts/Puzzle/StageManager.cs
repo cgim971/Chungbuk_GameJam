@@ -4,37 +4,41 @@ using UnityEngine;
 
 public class StageManager : MonoBehaviour
 {
-    [SerializeField] private List<StageInfo> _stageInfos = new List<StageInfo>();
+    [SerializeField] private StageInfo _stageInfo;
     [SerializeField] private Transform _parent;
     [SerializeField] private GameObject _point;
 
     [SerializeField] private GameObject _kingObj;
 
+    public static StageManager instance;
+    public int number;
+
+    private void Awake()
+    {
+        instance = this;
+    }
+
     private void Start()
     {
 
         // 이거 해야 함
-        SetStage(0);
+        SetStage();
         TouchController.instance.IsEnd = false;
     }
 
-    public void SetStage(int stageNumber)
+    public void SetStage()
     {
-        if (stageNumber > _stageInfos.Count) return;
+        CreatePoint(_stageInfo._startPointInfo.pos, PointInfo.PointType.StartPoint);
 
-        StageInfo stageInfo = _stageInfos[stageNumber];
-
-        CreatePoint(stageInfo._startPointInfo.pos, PointInfo.PointType.StartPoint);
-
-        for (int i = 0; i < _stageInfos[stageNumber]._stagePointList.Count; i++)
+        for (int i = 0; i < _stageInfo._stagePointList.Count; i++)
         {
-            CreatePoint(stageInfo._stagePointList[i].pos, PointInfo.PointType.MiddlePoint);
+            CreatePoint(_stageInfo._stagePointList[i].pos, PointInfo.PointType.MiddlePoint);
         }
 
-        CreatePoint(stageInfo._endPointInfo.pos, PointInfo.PointType.EndPoint);
+        CreatePoint(_stageInfo._endPointInfo.pos, PointInfo.PointType.EndPoint);
 
         GameObject king = Instantiate(_kingObj, null);
-        king.transform.position = stageInfo._startPointInfo.pos;
+        king.transform.position = _stageInfo._startPointInfo.pos;
     }
 
     public void CreatePoint(Vector2 pos, PointInfo.PointType pointType)
@@ -58,6 +62,5 @@ public class StageInfo
 [System.Serializable]
 public class StagePointInfo
 {
-    public int number;
     public Vector2 pos;
 }
