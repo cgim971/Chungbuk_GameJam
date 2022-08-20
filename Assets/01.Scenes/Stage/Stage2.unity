@@ -187,6 +187,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -1578444724484603118, guid: 6beea2fc95d60774fa3de8d03352a4a3, type: 3}
+      propertyPath: _isBatch
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1860186148582468591, guid: 6beea2fc95d60774fa3de8d03352a4a3, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -525,7 +529,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2dd9f0b0703a21640a3579b14b19a8d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _stageInfos: []
+  _stageInfos:
+  - _startPointInfo:
+      number: 0
+      pos: {x: -2, y: 0.95}
+    _stagePointList: []
+    _endPointInfo:
+      number: 0
+      pos: {x: 0.5, y: 2.5}
   _parent: {fileID: 1785980907}
   _point: {fileID: 3837644633885357455, guid: 3f84a731b781c8043a81549b6e598bf9, type: 3}
   _kingObj: {fileID: 2697942599446729623, guid: 4a9879946a9f528409fbf611c74f28a3, type: 3}
@@ -583,8 +594,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 128, y: 227.5}
-  m_SizeDelta: {x: 1080, y: 1919.5312}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &883071857
 MonoBehaviour:
@@ -624,6 +635,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 883071855}
   m_CullTransparentMesh: 1
+--- !u!1 &931116363 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4482391105113615056, guid: 6beea2fc95d60774fa3de8d03352a4a3, type: 3}
+  m_PrefabInstance: {fileID: 201883456}
+  m_PrefabAsset: {fileID: 0}
+--- !u!58 &931116367
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 931116363}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.3125
 --- !u!1 &983459178
 GameObject:
   m_ObjectHideFlags: 0
@@ -964,6 +996,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 592645251755643232, guid: a82a3f1f587f546448318a2a87dff70b, type: 3}
+      propertyPath: _isBatch
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2759680234972679697, guid: a82a3f1f587f546448318a2a87dff70b, type: 3}
       propertyPath: m_Name
       value: "\u3161 (1)"
@@ -1637,6 +1673,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1861724691}
   m_CullTransparentMesh: 1
+--- !u!1 &1885376492 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7515894489432014854, guid: 746e5f61700657540b816aec6222f8ff, type: 3}
+  m_PrefabInstance: {fileID: 2103376174}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &1885376496
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1885376492}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.625, y: 0.625}
+    newSize: {x: 0.5, y: 0.5}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.625, y: 0.625}
+  m_EdgeRadius: 0
 --- !u!1 &1898910668
 GameObject:
   m_ObjectHideFlags: 0
@@ -1681,6 +1748,37 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1900774809 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2759680234972679697, guid: a82a3f1f587f546448318a2a87dff70b, type: 3}
+  m_PrefabInstance: {fileID: 1500630996}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &1900774813
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1900774809}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.2466588}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.625, y: 0.625}
+    newSize: {x: 0.5, y: 0.5}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.625, y: 0.12409496}
+  m_EdgeRadius: 0
 --- !u!1001 &1942277400
 PrefabInstance:
   m_ObjectHideFlags: 0

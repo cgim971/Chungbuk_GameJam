@@ -1866,6 +1866,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stage Button
       objectReference: {fileID: 0}
+    - target: {fileID: 8149915256776608521, guid: dbb3a465e8535d14aa98c2454db574a1, type: 3}
+      propertyPath: m_text
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9014918099820719611, guid: dbb3a465e8535d14aa98c2454db574a1, type: 3}
       propertyPath: m_Enabled
       value: 0
