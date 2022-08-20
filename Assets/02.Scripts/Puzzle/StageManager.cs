@@ -12,7 +12,10 @@ public class StageManager : MonoBehaviour
 
     private void Start()
     {
+
+        // 이거 해야 함
         SetStage(0);
+        TouchController.instance.IsEnd = false;
     }
 
     public void SetStage(int stageNumber)

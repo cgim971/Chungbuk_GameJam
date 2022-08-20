@@ -6,6 +6,12 @@ public class WordController : MonoBehaviour
 {
     [SerializeField] private float _radius = 0.05f;
     [SerializeField] private List<CircleCollider2D> _circleCollider = new List<CircleCollider2D>();
+    public List<CircleCollider2D> CircleCollider
+    {
+        get => _circleCollider;
+        set => _circleCollider = value;
+    }
+
     [SerializeField] private LayerMask _circleMask;
 
     [SerializeField] private Vector2 _currentPos;
@@ -36,7 +42,7 @@ public class WordController : MonoBehaviour
                     {
                         // ∫Ÿ¿Ω
                         Vector3 pos = col2.transform.position;
-                        pos -= c.transform.localPosition / 2;
+                        pos -= c.transform.localPosition * 1;
 
                         transform.position = pos;
 
@@ -52,6 +58,7 @@ public class WordController : MonoBehaviour
         IsBatch = false;
         TouchController.instance.ReturnPos(this.gameObject, CurrentPos);
     }
+
 
 
 }

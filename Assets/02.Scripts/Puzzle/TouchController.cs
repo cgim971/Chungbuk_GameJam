@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class TouchController : MonoBehaviour
 {
     public static TouchController instance;
-    
+
     [SerializeField] private float _radius = 0.3f;
     [SerializeField] private LayerMask _wordLayer;
     [SerializeField] private LayerMask _mapLayer;
@@ -19,6 +19,13 @@ public class TouchController : MonoBehaviour
 
     Coroutine touchCoroutine;
     WordController word;
+
+    private bool _isEnd = false;
+    public bool IsEnd
+    {
+        get => _isEnd;
+        set => _isEnd = value;
+    }
 
     private void Awake()
     {
@@ -92,6 +99,8 @@ public class TouchController : MonoBehaviour
 
     void TouchEnd()
     {
+        if (_obj == null) return;
+
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
         // 마우스 위치 변경 필요
@@ -118,8 +127,10 @@ public class TouchController : MonoBehaviour
         return;
     }
 
+
     public void Return()
     {
+        if (_isEnd) return;
         KingMovement.instance.DeleteWord(out GameObject obj);
 
         if (obj == null) return;

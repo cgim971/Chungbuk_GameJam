@@ -26,7 +26,7 @@ public class ClockTimer : MonoBehaviour
             clockImg.fillAmount = 0;
             timeTxt.text = "";
             warn.enabled = false;
-
+            TouchController.instance.IsEnd = true;
             KingMovement.instance.FindRoad();
         }
     }
