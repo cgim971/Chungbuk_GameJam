@@ -66,6 +66,8 @@ public class KingMovement : MonoBehaviour
                 yield return null;
             }
         }
+
+        StageController.instance.Clear(1);
     }
 }
 

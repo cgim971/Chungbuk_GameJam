@@ -8,7 +8,7 @@ public class Lock : MonoBehaviour
     public int CurrentStage;
 
     private void Start() {
-        if (UserSave.OpenedStage >= CurrentStage) {
+        if (DataManager.Instance.data.stageClear[CurrentStage]) {
             gameObject.SetActive(false);
         }
     }

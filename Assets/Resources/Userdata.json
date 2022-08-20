@@ -1,1 +1,1 @@
-{"coin":0,"havingSkin":[true,false,false,false,false],"currentWearingSkinIndex":0,"stageClear":[false,false,false,false,false,false,false,false,false,false],"bgSoundVolume" : 1,"sfxSoundVolume":1}
+{"coin":0,"havingSkin":[true,false,false,false,false],"currentWearingSkinIndex":0,"stageClear":[false,true,false,false,false,false,false,false,false,false],"bgSoundVolume":1.0,"sfxSoundVolume":1.0}
