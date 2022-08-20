@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class TouchController : MonoBehaviour
 {
+    public static TouchController instance;
+    
     [SerializeField] private float _radius = 0.3f;
     [SerializeField] private LayerMask _wordLayer;
     [SerializeField] private LayerMask _mapLayer;
@@ -17,6 +19,11 @@ public class TouchController : MonoBehaviour
 
     Coroutine touchCoroutine;
     WordController word;
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     private void Start()
     {
@@ -63,6 +70,7 @@ public class TouchController : MonoBehaviour
 
         if (word.IsBatch == true)
         {
+            _obj = null;
             yield break;
         }
 
@@ -101,11 +109,11 @@ public class TouchController : MonoBehaviour
         {
             _obj.transform.position = _currentObjPos;
         }
+        word.IsBatch = true;
+        word.CurrentPos = _currentObjPos;
+
         word.FindCircle();
         _obj = null;
-        word.IsBatch = true;
-
-        word.CurrentPos = _currentObjPos;
 
         return;
     }
@@ -118,7 +126,12 @@ public class TouchController : MonoBehaviour
 
         WordController word = obj.GetComponent<WordController>();
 
-        obj.transform.position = word.CurrentPos;
+        ReturnPos(obj, word.CurrentPos);
         word.IsBatch = false;
+    }
+
+    public void ReturnPos(GameObject obj, Vector2 pos)
+    {
+        obj.transform.position = pos;
     }
 }

@@ -49,6 +49,8 @@ public class WordController : MonoBehaviour
 
         }
 
+        IsBatch = false;
+        TouchController.instance.ReturnPos(this.gameObject, CurrentPos);
     }
 
 
