@@ -19,8 +19,8 @@ public class ChangeVolume : MonoBehaviour
 
 
     public void OpenVolume() {
-        if (isBGM) slider.value = MusicVolumes.bgmVolume;
-        else slider.value = MusicVolumes.seVolume;
+        if (isBGM) slider.value = DataManager.Instance.data.bgSoundVolume;
+        else slider.value = DataManager.Instance.data.sfxSoundVolume;
         text.text = (int)(slider.value * 100) + "";
         audiosource.volume = slider.value;
     }
@@ -37,8 +37,8 @@ public class ChangeVolume : MonoBehaviour
     }
 
     public void SaveVolume() {
-        if(isBGM) MusicVolumes.bgmVolume = audiosource.volume;
-        else MusicVolumes.seVolume = audiosource.volume;
+        if(isBGM) DataManager.Instance.data.bgSoundVolume = audiosource.volume;
+        else DataManager.Instance.data.sfxSoundVolume = audiosource.volume;
     }
 
 }

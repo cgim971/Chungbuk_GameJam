@@ -12,8 +12,8 @@ public class SetVolume : MonoBehaviour
     }
 
     public void AudioVolume() {
-        if(isBGM) audiosource.volume = MusicVolumes.bgmVolume;
-        else audiosource.volume = MusicVolumes.seVolume;
+        if(isBGM) audiosource.volume = DataManager.Instance.data.bgSoundVolume;
+        else audiosource.volume = DataManager.Instance.data.sfxSoundVolume;
     }
 
 }

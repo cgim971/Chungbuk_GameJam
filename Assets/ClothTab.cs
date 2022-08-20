@@ -42,7 +42,7 @@ public class ClothTab : MonoBehaviour
         img.sprite = clothes[page].sprite;
         txt.text = clothes[page].names;
         locker.enabled = !UserSave.haveSkin[page];
-        btn.interactable= !UserSave.haveSkin[page];
+        btn.interactable= UserSave.haveSkin[page];
     }
 
     public void UseSkin() {

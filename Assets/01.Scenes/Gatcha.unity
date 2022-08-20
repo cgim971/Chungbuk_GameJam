@@ -711,7 +711,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1974386901}
   m_Direction: 0
   m_Value: 0
-  m_Size: 0.49999994
+  m_Size: 0.5
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -842,6 +842,7 @@ GameObject:
   - component: {fileID: 579548622}
   - component: {fileID: 579548621}
   - component: {fileID: 579548620}
+  - component: {fileID: 579548623}
   m_Layer: 5
   m_Name: Button (Legacy)
   m_TagString: Untagged
@@ -964,6 +965,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 579548618}
   m_CullTransparentMesh: 1
+--- !u!114 &579548623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 579548618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31a19414c41e5ae4aae2af33fee712f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShowMaskGraphic: 1
 --- !u!1 &622250538
 GameObject:
   m_ObjectHideFlags: 0
@@ -1912,7 +1926,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 176a02a8d22528c45ac9c117c70049a0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6cf424cbb0a1b7141aef14d83b4264c7, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
