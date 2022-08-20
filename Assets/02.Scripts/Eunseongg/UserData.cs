@@ -9,4 +9,7 @@ public class UserData
     public int currentWearingSkinIndex;
     public bool[] stageClear;
 
+    public float bgSoundVolume;
+    public float sfxSoundVolume;
+
 }
