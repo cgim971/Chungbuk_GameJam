@@ -86,6 +86,9 @@ public class KingMovement : MonoBehaviour
                 dist = Vector2.Distance(target, transform.position);
                 yield return null;
             }
+
+            StageController.instance.Clear(0);
+
         }
     }
 }

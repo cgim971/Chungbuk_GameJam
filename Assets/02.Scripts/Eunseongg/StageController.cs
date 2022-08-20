@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class StageController : MonoBehaviour
 {
@@ -25,12 +26,15 @@ public class StageController : MonoBehaviour
         {
         DataManager.Instance.data.stageClear[num] = true;
         DataManager.Instance.Save();
-        clearPanel.SetActive(true);
         }
         catch
         {
 
         }
+
+        clearPanel.SetActive(true);
+
     }
+
 
 }

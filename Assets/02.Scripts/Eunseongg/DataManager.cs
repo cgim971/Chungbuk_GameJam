@@ -21,6 +21,8 @@ public class DataManager : MonoBehaviour
         }
 
         DontDestroyOnLoad(gameObject);
+
+        Screen.SetResolution(1080, 1920, false);
     }
 
     private void Start() {
