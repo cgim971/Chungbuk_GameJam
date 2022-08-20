@@ -7,7 +7,7 @@ public class KingMovement : MonoBehaviour
 
     public static KingMovement instance;
 
-    [SerializeField] private List<WordController> wordControllerList = new List<WordController>();
+    [SerializeField] private List<WordScript> wordControllerList = new List<WordScript>();
 
 
     private void Start()
@@ -16,7 +16,7 @@ public class KingMovement : MonoBehaviour
     }
 
 
-    public void AddWord(WordController word)
+    public void AddWord(WordScript word)
     {
         wordControllerList.Add(word);
     }
@@ -28,7 +28,7 @@ public class KingMovement : MonoBehaviour
             obj = null;
             return;
         }
-        WordController word = wordControllerList[wordControllerList.Count - 1];
+        WordScript word = wordControllerList[wordControllerList.Count - 1];
         wordControllerList.Remove(word);
 
         obj = word.gameObject;
@@ -38,7 +38,7 @@ public class KingMovement : MonoBehaviour
     public void FindRoad()
     {
         int index = 0;
-        foreach (WordController word in wordControllerList)
+        foreach (WordScript word in wordControllerList)
         {
             for (int i = 0; i < word.CircleCollider.Count; i++)
             {

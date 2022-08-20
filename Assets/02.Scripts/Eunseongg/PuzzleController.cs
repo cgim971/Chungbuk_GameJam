@@ -3,38 +3,33 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class TouchController : MonoBehaviour
+public class PuzzleController : MonoBehaviour
 {
-    public static TouchController instance;
+    private static PuzzleController instance;
+    public static PuzzleController Instance { get { return instance; } }
 
     [SerializeField] private float _radius = 0.3f;
     [SerializeField] private LayerMask _wordLayer;
     [SerializeField] private LayerMask _mapLayer;
     [SerializeField] private LayerMask _wordMapLayer;
 
-    [SerializeField] private Button _returnBtn;
-
-    Collider2D _obj;
-    private Vector2 _currentObjPos;
-
     Coroutine touchCoroutine;
-    WordScript word;
 
-    private bool _isEnd = false;
-    public bool IsEnd
-    {
-        get => _isEnd;
-        set => _isEnd = value;
-    }
+    public GameObject currentDragObject;
 
+    public WordScript currentWord;
     private void Awake()
     {
-        instance = this;
+        if (instance == null)
+            instance = this;
+        else
+            Destroy(gameObject);
+
     }
 
     private void Start()
     {
-        //_returnBtn.onClick.AddListener(() => Return());
+        // _returnBtn.onClick.AddListener(() => Return());
     }
 
     private void Update()
@@ -57,41 +52,46 @@ public class TouchController : MonoBehaviour
     IEnumerator Touching()
     {
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Debug.Log($"{ mousePos.x}, {0}, {mousePos.z}");
 
-        Collider2D[] cols = Physics2D.OverlapCircleAll(mousePos, _radius, _wordLayer);
-        foreach (Collider2D col in cols)
+        Collider[] cols = Physics.OverlapSphere(new Vector3(mousePos.x, 0, mousePos.z), _radius, _wordLayer);
+        yield return null;
+        foreach (Collider col in cols)
         {
+            Debug.Log(col.name);
             if (col.isTrigger == true)
             {
-                _obj = col;
-                continue;
+                Debug.Log("Found");
+                currentDragObject = col.gameObject;
             }
         }
 
-        if (_obj == null)
+        if (currentDragObject == null)
         {
+            Debug.Log("not exsit");
             yield break;
         }
 
-        WordScript word = _obj.GetComponent<WordScript>();
+        WordScript word = currentDragObject.GetComponent<WordScript>();
 
+        /*
         if (word.IsBatch == true)
         {
             _obj = null;
             yield break;
-        }
+        }*/
 
 
-        _currentObjPos = _obj.transform.position;
+        Vector3 _currentObjPos = currentDragObject.transform.position;
 
-        Vector3 offset = _currentObjPos - (Vector2)mousePos;
+        Vector3 offset = _currentObjPos - (Vector3)mousePos;
 
         while (true)
         {
             mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             mousePos += offset;
-            mousePos.z = 0;
-            _obj.transform.position = mousePos;
+            //mousePos.y = 0;
+            currentDragObject.transform.position = mousePos;
 
             yield return null;
         }
@@ -99,50 +99,33 @@ public class TouchController : MonoBehaviour
 
     void TouchEnd()
     {
-        if (_obj == null) return;
-
+        if (currentDragObject == null) return;
+        
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
+        
         // 마우스 위치 변경 필요
         Collider2D map = Physics2D.OverlapCircle(mousePos, _radius, _wordMapLayer);
-        word = _obj.GetComponent<WordScript>();
+        currentWord = currentDragObject.GetComponent<WordScript>();
 
         if (map != null)
         {
-            _obj = null;
+            currentDragObject = null;
             return;
         }
 
         map = Physics2D.OverlapCircle(mousePos, _radius, _mapLayer);
         if (map == null)
         {
-            _obj.transform.position = _currentObjPos;
+            currentDragObject.transform.position = currentDragObject.transform.position;
         }
-        word.IsBatch = true;
-        word.CurrentPos = _currentObjPos;
+        currentWord.Current = _currentObjPos;
 
-        word.FindCircle();
+        currentWord.FindCircle();
         _obj = null;
 
         return;
     }
 
 
-    public void Return()
-    {
-        if (_isEnd) return;
-        KingMovement.instance.DeleteWord(out GameObject obj);
 
-        if (obj == null) return;
-
-        WordScript word = obj.GetComponent<WordScript>();
-
-        ReturnPos(obj, word.CurrentPos);
-        word.IsBatch = false;
-    }
-
-    public void ReturnPos(GameObject obj, Vector2 pos)
-    {
-        obj.transform.position = pos;
-    }
 }

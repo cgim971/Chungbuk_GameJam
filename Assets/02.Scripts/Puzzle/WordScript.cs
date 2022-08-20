@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WordController : MonoBehaviour
+public class WordScript : MonoBehaviour
 {
     [SerializeField] private float _radius = 0.05f;
     [SerializeField] private List<CircleCollider2D> _circleCollider = new List<CircleCollider2D>();
