@@ -62,11 +62,27 @@ public class WordController : MonoBehaviour, IPointerEnterHandler, IDropHandler,
 	/// </summary>
     public void OnEndDrag(PointerEventData eventData)
     {
+        bool success = false;
         // 재배치 혹은 연결
         foreach (PointController point in points)
         {
-            point.ConnectedCheck();
+
+            success = point.ConnectedCheck();
+            if (success)
+                break;
         }
+
+        if (success)
+        {
+            GameObject obj = Instantiate(points[0].temp, Camera.main.ScreenToWorldPoint(rect.position), Quaternion.identity);
+            obj.transform.position = Camera.main.ScreenToWorldPoint(rect.position);
+            gameObject.SetActive(false);
+        }
+        else
+        {
+            // 재배치
+        }
+
     }
 
     /// <summary>
